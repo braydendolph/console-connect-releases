@@ -1,7 +1,7 @@
 <title>Rackside</title>
-<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon.svg?v=5" type="image/svg+xml">
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Rackside: serial, SSH and Telnet for network engineers, with config backups, a network map and push config built in. Free for Windows and Mac.">
+<meta name="description" content="Rackside: serial, SSH and Telnet for network engineers, with config backups, a network map and push config built in. Free for Windows, Mac and Linux.">
 <style>
 /* Layout: the app's own window language — a sticky top bar like its title bar, then wide bands
    that alternate between the app's grey ground and its card white, each band holding one real screen. */
@@ -154,7 +154,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 @media (max-width: 560px) { .cards { grid-template-columns: minmax(0, 1fr); } }
 
 /* download */
-.dl-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.dl-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 1100px) { .dl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .dl { background: var(--raised); border: 1px solid var(--border); border-radius: var(--r-card); padding: 22px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 .dl.mine { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
 .dl .os { display: flex; align-items: center; gap: 12px; }
@@ -164,11 +165,14 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .dl .chip { align-self: flex-start; font-size: 11.5px; font-weight: 650; color: var(--accent); background: var(--accent-soft); padding: 2px 9px; border-radius: 10px; }
 .dl .file { font: 12px var(--mono); color: var(--faint); overflow-wrap: anywhere; }
 .dl .btn { width: 100%; }
+.dl .btns { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
+.dl .hint { color: var(--muted); font-size: 12.5px; }
 .which { margin-top: 18px; color: var(--muted); font-size: 14px; }
 @media (max-width: 860px) { .dl-grid { grid-template-columns: minmax(0, 1fr); } }
 
 /* first launch */
-.steps-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.steps-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 1000px) { .steps-grid { grid-template-columns: minmax(0, 1fr); } }
 .steps { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-card); padding: 22px; min-width: 0; }
 .steps h3 { margin-bottom: 12px; }
 .steps ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: var(--muted); }
@@ -206,7 +210,7 @@ footer a { color: var(--muted); }
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <span class="pill"><i></i>Version 5.0.0 · Console Connect is now Rackside</span>
+        <span class="pill"><i></i>Version 5.1.0 · now on Linux</span>
         <h1>The console app for people who manage switches.</h1>
         <p class="lead">Plug in a console cable or open an SSH session, and everything else you do with network gear is in the same window: config backups, a map of what plugs into what, pushing changes to many devices, and the troubleshooting tools you reach for every day.</p>
         <div class="ctas">
@@ -215,7 +219,7 @@ footer a { color: var(--muted); }
             <span id="heroDlText">Download for free</span></a>
           <a class="btn big" href="#features">See what it does</a>
         </div>
-        <p class="meta" id="heroMeta"><b>Windows 10 and 11</b> · <b>macOS 12 or later</b> (Apple silicon and Intel) · updates itself</p>
+        <p class="meta" id="heroMeta"><b>Windows 10 and 11</b> · <b>macOS 12 or later</b> (Apple silicon and Intel) · <b>Linux</b> (Ubuntu, Debian and others) · updates itself</p>
       </div>
       <div class="hero-shot">
         <div class="window">
@@ -369,7 +373,7 @@ footer a { color: var(--muted); }
     <div class="wrap">
       <div class="grid-head">
         <span class="caption">Download</span>
-        <h2>Get Rackside 5.0.0</h2>
+        <h2>Get Rackside 5.1.0</h2>
         <p class="lead">Free to download. Install it once and it keeps itself up to date.</p>
       </div>
       <div class="dl-grid">
@@ -391,6 +395,15 @@ footer a { color: var(--muted); }
           <div class="file">Rackside-Mac-Intel.zip</div>
           <a class="btn" href="https://github.com/braydendolph/console-connect-releases/releases/latest/download/Rackside-Mac-Intel.zip" rel="noopener">Download for Intel</a>
         </div>
+        <div class="dl" id="dl-linux">
+          <div class="os"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.5h18a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1zm1.5 3v10.5h15V7.5zm2 2.2 3.3 2.3-3.3 2.3-.9-1.2 1.6-1.1-1.6-1.1zM11 14.5h5V16h-5z"/></svg><span><b>Linux</b><span>64-bit · Ubuntu 22.04+, Debian 12+ and others</span></span></div>
+          <span class="chip hidden-chip" hidden>Your computer</span>
+                    <div class="btns">
+            <a class="btn accent" href="https://github.com/braydendolph/console-connect-releases/releases/latest/download/Rackside-Linux-amd64.deb" rel="noopener">Download .deb</a>
+            <a class="btn" href="https://github.com/braydendolph/console-connect-releases/releases/latest/download/Rackside-Linux-x86_64.AppImage" rel="noopener">Download AppImage</a>
+          </div>
+          <span class="hint">.deb for Ubuntu, Debian and Mint. AppImage for other distributions.</span>
+        </div>
       </div>
       <p class="which">Not sure which Mac you have? Open the Apple menu › About This Mac. “Chip: Apple M…” means Apple silicon; “Processor: Intel” means Intel. Checksums and older versions are on the <a href="https://github.com/braydendolph/console-connect-releases/releases" rel="noopener">releases page</a>.</p>
     </div>
@@ -401,7 +414,7 @@ footer a { color: var(--muted); }
       <div class="grid-head">
         <span class="caption">First launch</span>
         <h2>Opening it the first time</h2>
-        <p class="lead">Windows and macOS ask once before they open an app downloaded from the internet. After that it opens like any other app.</p>
+        <p class="lead">Windows and macOS ask once before they open an app downloaded from the internet. On Linux, one command lets Rackside use console cables. After that it opens like any other app.</p>
       </div>
       <div class="steps-grid">
         <div class="steps">
@@ -422,6 +435,15 @@ footer a { color: var(--muted); }
           </ol>
           <p class="note">You only do this once. A USB console cable usually needs no driver on a Mac; on Windows, Prolific and FTDI cables usually get their driver from Windows Update.</p>
         </div>
+        <div class="steps">
+          <h3>Linux</h3>
+          <ol>
+            <li><b>Ubuntu, Debian, Mint:</b> open the .deb (or run <code>sudo apt install ./Rackside-Linux-amd64.deb</code>). Rackside appears in your apps.</li>
+            <li><b>Other distros:</b> make the AppImage executable (<code>chmod +x Rackside-Linux-x86_64.AppImage</code>) and open it.</li>
+            <li>To use console cables, add yourself to the serial group once: <code>sudo usermod -aG dialout $USER</code>, then sign out and back in.</li>
+          </ol>
+          <p class="note">USB console cables need no drivers on Linux. The TFTP and syslog servers use ports below 1024; Rackside shows the one command that allows it the first time you start them.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -434,7 +456,7 @@ footer a { color: var(--muted); }
       </div>
       <div class="faq">
         <details><summary>Is it free?</summary><p>Yes. Rackside is free to download and use.</p></details>
-        <details><summary>Where are my passwords kept?</summary><p>Only on your computer, encrypted by Windows or the macOS keychain. Rackside has no account and no cloud service.</p></details>
+        <details><summary>Where are my passwords kept?</summary><p>Only on your computer, encrypted by Windows, the macOS keychain or your Linux keyring. Rackside has no account and no cloud service.</p></details>
         <details><summary>What does it connect to on the internet?</summary><p>Only your own devices, GitHub to check for updates, and Cloudflare’s servers when you run a speed test. You can turn the update check off in Settings.</p></details>
         <details><summary>Which console cables work?</summary><p>USB console cables with FTDI, Prolific, Silicon Labs or CH340 chips, built-in USB-C and mini-USB console ports on newer switches, and Wi-Fi or Ethernet console adapters.</p></details>
         <details><summary>Which devices does it understand?</summary><p>Backups, config checks, the port mapper, Push config and the network map read Cisco IOS and IOS-XE, NX-OS, ASA, Arista EOS, Juniper Junos, Aruba and MikroTik. The terminal works with anything that has a console.</p></details>
@@ -447,7 +469,7 @@ footer a { color: var(--muted); }
 <footer>
   <div class="wrap">
     <a class="brand" href="#top"><img src="img/icon.svg" alt="">Rackside</a>
-    <span>Version 5.0.0 · Formerly Console Connect · Made by Brayden Dolph</span>
+    <span>Version 5.1.0 · Formerly Console Connect · Made by Brayden Dolph</span>
     <nav aria-label="Links"><a href="https://github.com/braydendolph/console-connect-releases/releases" rel="noopener">Release notes</a><a href="#download">Download</a><a href="#first-launch">First launch</a></nav>
   </div>
 </footer>
@@ -457,10 +479,11 @@ footer a { color: var(--muted); }
   // Point the main button at the right download for this computer.
   var ua = navigator.userAgent || '', plat = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
   var isWin = /win/i.test(plat) || /Windows/.test(ua), isMac = /mac/i.test(plat) || /Macintosh/.test(ua);
+  var isLinux = !isWin && !isMac && (/linux/i.test(plat) || /Linux|X11/.test(ua)) && !/Android|CrOS/.test(ua);
   var mobile = /iPhone|iPad|Android/.test(ua);
   var btn = document.getElementById('heroDl'), txt = document.getElementById('heroDlText');
   function mark(id) { var el = document.getElementById(id); if (!el) return; el.classList.add('mine'); var c = el.querySelector('.hidden-chip'); if (c) c.hidden = false; }
-  if (mobile) { txt.textContent = 'Download for Windows or Mac'; return; }
+  if (mobile) { txt.textContent = 'Download for Windows, Mac or Linux'; return; }
   if (isWin) {
     txt.textContent = 'Download for Windows';
     btn.href = 'https://github.com/braydendolph/console-connect-releases/releases/latest/download/Rackside-Setup-Windows.exe';
@@ -475,6 +498,11 @@ footer a { color: var(--muted); }
     btn.rel = 'noopener';
     mark(arm ? 'dl-arm' : 'dl-intel');
     document.getElementById('heroMeta').innerHTML = 'For ' + (arm ? 'Apple silicon' : 'Intel') + ' Macs · <a href="#download">other downloads</a>';
+  } else if (isLinux) {
+    txt.textContent = 'Download for Linux';
+    btn.href = '#download';
+    mark('dl-linux');
+    document.getElementById('heroMeta').innerHTML = '.deb for Ubuntu, Debian and Mint, AppImage for other distros · <a href="#download">all downloads</a>';
   }
 })();
 </script>
