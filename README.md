@@ -4,7 +4,7 @@
 
 _Formerly Console Connect. Version 5.0 renamed the app; existing installs update automatically and keep their settings._
 
-Serial, USB-C, SSH, Telnet and SFTP console for network gear, with config backups, a TFTP and syslog server, and network tools. For Windows 10/11 and macOS 12 or later.
+Serial, USB-C, SSH, Telnet and SFTP console for network gear, with config backups, a TFTP and syslog server, and network tools. For Windows 10/11, macOS 12 or later, and Linux (64-bit).
 
 ## Download
 
@@ -13,6 +13,8 @@ Serial, USB-C, SSH, Telnet and SFTP console for network gear, with config backup
 | **Windows** 10 or 11 | [Rackside-Setup-Windows.exe](https://github.com/braydendolph/console-connect-releases/releases/latest/download/Rackside-Setup-Windows.exe) |
 | **Mac with Apple silicon** (M1, M2, M3, M4…) | [Rackside-Mac-AppleSilicon.zip](https://github.com/braydendolph/console-connect-releases/releases/latest/download/Rackside-Mac-AppleSilicon.zip) |
 | **Mac with an Intel processor** | [Rackside-Mac-Intel.zip](https://github.com/braydendolph/console-connect-releases/releases/latest/download/Rackside-Mac-Intel.zip) |
+| **Linux**: Ubuntu, Debian, Mint | [Rackside-Linux-amd64.deb](https://github.com/braydendolph/console-connect-releases/releases/latest/download/Rackside-Linux-amd64.deb) |
+| **Linux**: other distributions | [Rackside-Linux-x86_64.AppImage](https://github.com/braydendolph/console-connect-releases/releases/latest/download/Rackside-Linux-x86_64.AppImage) |
 
 These links always give you the newest version. Not sure which Mac you have? Open the Apple menu › **About This Mac**: "Chip: Apple M…" means Apple silicon, "Processor: Intel" means Intel.
 
@@ -43,6 +45,12 @@ The button only shows for about an hour after step 2, so double-click the app ag
 xattr -dr com.apple.quarantine "/Applications/Rackside.app"
 ```
 </details>
+
+## Install on Linux
+
+1. **Ubuntu, Debian, Mint:** run `sudo apt install ./Rackside-Linux-amd64.deb` (or open the file in your software installer).
+   **Other distributions:** run `chmod +x Rackside-Linux-x86_64.AppImage`, then open it.
+2. To use USB console cables, add yourself to the serial group once: `sudo usermod -aG dialout $USER`, then sign out and back in.
 
 ## What's new
 
